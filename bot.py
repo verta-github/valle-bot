@@ -26,12 +26,12 @@ async def number(ctx):
     await bot.say(embed=embed)
 
 @bot.command(pass_context=True)
-async def useri(ctx, user: discord.Member):
-    embed = discord.Embed(title="Info about {}".format(user.name), description="I found this about {}".format(user.name), color=0x42e5f4)
-    embed.add_field(name="User ID", value=user.id, inline=True)
-    embed.add_field(name="User joindate", value=user.joined_at, inline=True)
-    embed.add_field(name="User status", value=user.status)
-    embed.add_field(name="User role", value=user.top_role, inline=True)
+async def usri(ctx, user: discord.Member):
+    embed = discord.Embed(title="{}s stats".format(user.name), description="I found this (i hope the info is correct. :fingers_crossed:)", color=0x21bef2)
+    embed.add_field(name="Name", value=user.name, inline=True)
+    embed.add_field(name="ID", value=user.id, inline=True)
+    embed.add_field(name="Join date", value=user.joined_at)
+    embed.add_field(name="Rank", value=user.top_role)
     embed.set_thumbnail(url=user.avatar_url)
     await bot.say(embed=embed)
 
